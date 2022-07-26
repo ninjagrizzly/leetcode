@@ -7,12 +7,13 @@
 from typing import List
 
 def twoSum(nums: List[int], target: int) -> List[int]:
-    diff = {}
+    indexes = {}
 
     for idx, num in enumerate(nums):
-        if num in diff:
-            return [diff[num], idx]
-        diff[target - num] = idx
+        diff = target - num
+        if diff in indexes:
+            return [indexes[diff], idx]
+        indexes[num] = idx
 
 
 print(twoSum([1, 2, 3, 10, 4, 5, 6], 11))
