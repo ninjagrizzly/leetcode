@@ -9,10 +9,7 @@
 from typing import List
 
 def maxProfit(prices: List[int]) -> int:
-    if (len(prices) < 2):
-        return 0
-
-    min_price = prices[0]
+    min_price = inf
     profit = 0
 
     for i in range(len(prices)):
